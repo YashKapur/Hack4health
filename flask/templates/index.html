@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediBot AI - Your Health Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="particles"></div>
+    
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">🏥</div>
+                <span>MediBot AI</span>
+            </div>
+            <div class="nav-buttons">
+                <button class="nav-btn">About</button>
+                <button class="nav-btn">Help</button>
+                <button class="nav-btn">Contact</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Your AI Health Assistant</h1>
+            <p>Describe your symptoms and get instant medical insights, disease predictions, and specialist recommendations</p>
+        </div>
+
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2>🤖 MediBot AI</h2>
+                <p>Advanced Medical Symptom Analysis</p>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message">
+                    <div class="message-avatar bot-avatar">🤖</div>
+                    <div class="message-content">
+                        <p>Hello! I'm MediBot AI, your virtual medical assistant. I can help you analyze your symptoms and provide insights about possible conditions.</p>
+                        <p><strong>Please describe your symptoms in detail.</strong> The more information you provide, the better I can assist you.</p>
+                    </div>
+                </div>
+                <div class="suggestions">
+                    <div class="suggestion" onclick="sendSuggestion('I have a headache and fever')">🤒 Headache & Fever</div>
+                    <div class="suggestion" onclick="sendSuggestion('I feel chest pain and shortness of breath')">💓 Chest Pain</div>
+                    <div class="suggestion" onclick="sendSuggestion('I have stomach pain and nausea')">🤢 Stomach Issues</div>
+                    <div class="suggestion" onclick="sendSuggestion('I have a persistent cough')">😷 Cough</div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Describe your symptoms here..." onkeypress="handleKeyPress(event)">
+                <button class="send-button" onclick="sendMessage()">➤</button>
+            </div>
+        </div>
+        
+        <button class="pdf-button" onclick="generatePDF()" style="display: none;" id="pdfButton">
+            📄 Generate Medical Report PDF
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
